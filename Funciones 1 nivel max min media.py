@@ -51,7 +51,7 @@ funciones = {
 def returnF(nombre):
     nombre = nombre.lower()
     if nombre.lower() in funciones.keys(): #Si nombre(me lo pasas a minusculas) está dentro de las keys del diccionario funciones
-        return funciones[nombre]
+        return funciones[nombre] #Función como parámetro de salida
     
     return None
 
