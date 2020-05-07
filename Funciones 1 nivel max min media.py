@@ -1,3 +1,6 @@
+
+# Una funcion es de nivel superior si admite como parámetros funciones o su resultado es una función o cumple ambas
+
 #FUNCIÓN de máximo
 def maxi(*l):  #*coge los elementos searados por comas
     if len(l) == 0: #l es una array
@@ -34,3 +37,28 @@ def media(*l):
         suma += valor
     
     return suma / len(l)
+
+#Creamos un diccionario
+funciones = {
+    'max': maxi,
+    'min': mini,
+    'med': media
+   
+    }
+
+
+#funcion de primer nivel que nos devuelve otra funcion 
+def returnF(nombre):
+    nombre = nombre.lower()
+    if nombre.lower() in funciones.keys(): #Si nombre(me lo pasas a minusculas) está dentro de las keys del diccionario funciones
+        return funciones[nombre]
+    
+    return None
+
+#invocando la función returnF(invoca una array del diccionario) ejecuta otra función
+
+'''
+Ejemplo: returnF('min')(1, 3, -1, 15, 9)
+Devuelve_ -1
+
+'''
