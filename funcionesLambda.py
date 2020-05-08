@@ -13,3 +13,11 @@ doble = lambda x: x*2
 print(sumaTodos(3, doble))
 
 '''
+# Los siguientes resultados son idénticos
+# def doble(x):
+#    return x+x
+
+#lista = [1, 3, -1, 15, 9]ç
+
+#listaDobles = map(lambda x: x*2, lista)
+#listaDobles1 = map(doble, lista)
