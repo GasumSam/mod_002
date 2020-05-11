@@ -6,6 +6,7 @@ tortuguita = turtle.Turtle()
 otraTortuguita = turtle.Turtle()
 
 tortuguita.shape('turtle')
+tortuguita.color('red')
 tortuguita.fd(50)
 
 otraTortuguita.color('green')
