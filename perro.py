@@ -1,3 +1,19 @@
+class Dog():
+    def __init__(self): #Cuando intentes peter los atributos (miko = Dog('miko', 3, 8'), peta. Est· especificado solo el propio atributo self
+        self.nombre = ""
+        self.edad = None
+        self.peso = None 
+
+    def ladrar(self):
+        if self.peso == None:
+            print("Soy un fantasma")
+            
+        if self.peso >= 8:
+            print("GUAUm GUAU")
+        else:
+            print("ay, ay")
+            
+
 class Perro():
     def __init__(self, n, e, p):  #El constructor me permite construir la instancia (la copia del objeto que fija las caracter√≠sticas)
         self.nombre = n  #El atributo nombre de la clase propia (self) es el que ocupa el segundo lugar del par√©ntesis
@@ -21,7 +37,9 @@ class PerroAsistencia(Perro):
     def __init__(self, nombre, edad, peso, amo):
         Perro.__init__(self, nombre, edad, peso)
         self.amo = amo 
-        self.trabajando = False  #Crea ubn atributo nuevo. Cuando se invoca por defecto a False
+        self.__trabajando = False  #Crea ubn atributo nuevo. Cuando se invoca por defecto a False
+        
+        #con rantanplan.trabajando = True cambio el estad y su ladrido cambia
             
     def __str__(self):   #Al ser una funci√≥n que procede de la anterior clase, lo que se est√° haciendo es 'sobreescribir' el m√©todo
         return "Perro de asistencia de {}".format(self.amo)
@@ -35,6 +53,20 @@ class PerroAsistencia(Perro):
         else:
             Perro.ladrar(self)  #Invoco a la instancia original  (M√©todo padre)
     
+#definimos nuevos mÈtodos
+            
+    def trabajando(self, valor=None): #El valor, si no se informa en la funciÛn, le doy el valor nulo 
+        if valor == None:   #No se ha informado el valor? pues me devuelves el que tiene
+            return self.__trabajando
+        else:       #Se ha informado el valor? Si la respuesta es sÌ, asÌgnalo a __trabajando
+            self.__trabajando = valor 
+            
+#trabajando() GETTER
+#trabajando(True)   SETTER
+            
+            # rantanplan._PerroAsistencia__trabajando()
+            # rantanplan.trabajando()  GETTER
+            # rantanplan.trabajando(True/False)  SETTER
             
             
             
